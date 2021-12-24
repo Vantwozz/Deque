@@ -10,7 +10,7 @@ template <class InfoType>
 class deque
 {
 private:
-    class QItem//класс элемента дека
+    class QItem//РєР»Р°СЃСЃ СЌР»РµРјРµРЅС‚Р° РґРµРєР°
     {
     public:
         InfoType info;
@@ -18,27 +18,27 @@ private:
         QItem* prev;
         QItem(InfoType Ainfo) : info(Ainfo), prev(nullptr), next(nullptr) {}
     };
-    QItem* first, * last;//указатели на первый и последний элементы
-    unsigned size;//размер дека
-    void Erase();//очистка дека
-    void Clone(const deque& D);//создание точной копии дека
-    InfoType GetElement(unsigned);//получить n-ный с начала элемент очереди
-    bool Empty() const;//проверка на пустоту очереди
+    QItem* first, * last;//СѓРєР°Р·Р°С‚РµР»Рё РЅР° РїРµСЂРІС‹Р№ Рё РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚С‹
+    unsigned size;//СЂР°Р·РјРµСЂ РґРµРєР°
+    void Erase();//РѕС‡РёСЃС‚РєР° РґРµРєР°
+    void Clone(const deque& D);//РєР»РѕРЅРёСЂРѕРІР°РЅРёРµ РґРµРєР°
+    InfoType GetElement(unsigned);//РїРѕР»СѓС‡РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё n-РЅРѕРіРѕ СЃ РЅР°С‡Р°Р»Р° СЌР»РµРјРµРЅС‚Р°
+    bool Empty() const;//РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
 public:
-    const InfoType GetFirst() const;//получение информации, которая хранится в первом элементе
-    const InfoType GetLast() const;//получение информации, которая хранится в первом элементе
-    unsigned GetSize();//узнать размер очереди
-    deque();//конструктор по умолчанию, создающий пустой дек
-    deque(const deque&);//конструктор копирования
-    ~deque();//деструктор
-    deque& operator = (const deque&);//оператор присваивания
-    friend ostream& operator << (ostream&, const deque<InfoType>&);//оператор <<
-    ostream& Print(ostream&);//вывод в поток всех элементов дека в нормальном порядке
-    ostream& PrintReverse(ostream&);//вывод в поток всех эдементов дека в обратном порядке
-    void PushLast(InfoType);//добавление элемента в конец дека
-    bool PopLast();//удаление элемента из конца дека
-    void PushFirst(InfoType);//добавление элемента в начало дека
-    bool PopFirst();//удаление элемента из начала дека
+    const InfoType GetFirst() const;//РїРѕР»СѓС‡РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё, РєРѕС‚РѕСЂР°СЏ С…СЂР°РЅРёС‚СЃСЏ РІ РїРµСЂРІРѕРј СЌР»РµРјРµРЅС‚Рµ
+    const InfoType GetLast() const;//РїРѕР»СѓС‡РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё, РєРѕС‚РѕСЂР°СЏ С…СЂР°РЅРёС‚СЃСЏ РІ РїРѕСЃРµРґРЅРµРј СЌР»РµРјРµРЅС‚Рµ
+    unsigned GetSize();//РїРѕР»СѓС‡РµРЅРёРµ СЂР°Р·РјРµСЂР°
+    deque();//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ, СЃРѕР·РґР°СЋС‰РёР№ РїСѓСЃС‚РѕР№ РґРµРє
+    deque(const deque&);//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+    ~deque();//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+    deque& operator = (const deque&);//РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+    friend ostream& operator << (ostream&, const deque<InfoType>&);//РѕРїРµСЂР°С‚РѕСЂ <<
+    ostream& Print(ostream&);//РІС‹РІРѕРґ РІ РїРѕС‚РѕРє РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РґРµРєР° РІ РЅРѕСЂРјР°Р»СЊРЅРѕРј РїРѕСЂСЏРґРєРµ
+    ostream& PrintReverse(ostream&);//РІС‹РІРѕРґ РІ РїРѕС‚РѕРє РІСЃРµС… СЌРґРµРјРµРЅС‚РѕРІ РґРµРєР° РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
+    void PushLast(InfoType);//РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РєРѕРЅРµС† РґРµРєР°
+    bool PopLast();//СѓРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕСЌР»РµРјРµРЅС‚Р° РґРµРєР°
+    void PushFirst(InfoType);//РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РЅР°С‡Р°Р»Рѕ РґРµРєР°
+    bool PopFirst();//СѓРґР°Р»РµРЅРёРµ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 };
 template <class InfoType>
 bool deque <InfoType> ::Empty() const {
